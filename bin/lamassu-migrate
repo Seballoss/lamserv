@@ -20,7 +20,7 @@ const getMigrateFile = () => {
     })
   })
 }
-
+console.log({db})
 db.none(createMigration)
   .then(() => Promise.all([db.oneOrNone(select), getMigrateFile()]))
   .then(([qResult, migrateFile]) => {

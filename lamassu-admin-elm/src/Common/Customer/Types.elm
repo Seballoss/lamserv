@@ -21,6 +21,8 @@ type alias Customer =
     , name : Maybe String
     , phone : Maybe String
     , phoneAt : Maybe Date
+    , email : Maybe String
+    , emailAt : Maybe Date
     , smsOverride : Authorized
     , smsOverrideByName : Maybe String
     , smsOverrideAt : Maybe Date

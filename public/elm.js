@@ -28170,7 +28170,11 @@ var _user$project$Common_Customer_Types$Customer = function (a) {
 																															return function (_6) {
 																																return function (_7) {
 																																	return function (_8) {
-																																		return {id: a, name: b, phone: c, phoneAt: d, smsOverride: e, smsOverrideByName: f, smsOverrideAt: g, created: h, status: i, authorizedOverride: j, authorizedOverrideByName: k, authorizedOverrideAt: l, authorizedAt: m, idCardData: n, idCardDataOverride: o, idCardDataOverrideByName: p, idCardDataOverrideAt: q, idCardDataAt: r, idCardPhotoPath: s, idCardPhotoOverride: t, idCardPhotoOverrideByName: u, idCardPhotoOverrideAt: v, idCardPhotoAt: w, sanctions: x, sanctionsOverride: y, sanctionsOverrideByName: z, sanctionsOverrideAt: _1, sanctionsAt: _2, frontCameraPath: _3, frontCameraOverride: _4, frontCameraOverrideByName: _5, frontCameraOverrideAt: _6, frontCameraAt: _7, dailyVolume: _8};
+																																		return function (_9) {
+																																			return function (_10) {
+																																				return {id: a, name: b, phone: c, phoneAt: d, email: e, emailAt: f, smsOverride: g, smsOverrideByName: h, smsOverrideAt: i, created: j, status: k, authorizedOverride: l, authorizedOverrideByName: m, authorizedOverrideAt: n, authorizedAt: o, idCardData: p, idCardDataOverride: q, idCardDataOverrideByName: r, idCardDataOverrideAt: s, idCardDataAt: t, idCardPhotoPath: u, idCardPhotoOverride: v, idCardPhotoOverrideByName: w, idCardPhotoOverrideAt: x, idCardPhotoAt: y, sanctions: z, sanctionsOverride: _1, sanctionsOverrideByName: _2, sanctionsOverrideAt: _3, sanctionsAt: _4, frontCameraPath: _5, frontCameraOverride: _6, frontCameraOverrideByName: _7, frontCameraOverrideAt: _8, frontCameraAt: _9, dailyVolume: _10};
+																																			};
+																																		};
 																																	};
 																																};
 																															};
@@ -28351,21 +28355,29 @@ var _user$project$Common_Customer_Decoder$customerDecoder = A3(
 																														_user$project$Common_Customer_Decoder$authorizedDecoder,
 																														A3(
 																															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																															'phoneAt',
+																															'emailAt',
 																															_elm_lang$core$Json_Decode$nullable(_elm_community$json_extra$Json_Decode_Extra$date),
 																															A3(
 																																_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																																'phone',
+																																'email',
 																																_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 																																A3(
 																																	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																																	'name',
-																																	_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+																																	'phoneAt',
+																																	_elm_lang$core$Json_Decode$nullable(_elm_community$json_extra$Json_Decode_Extra$date),
 																																	A3(
 																																		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																																		'id',
-																																		_elm_lang$core$Json_Decode$string,
-																																		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Common_Customer_Types$Customer)))))))))))))))))))))))))))))))))));
+																																		'phone',
+																																		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+																																		A3(
+																																			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+																																			'name',
+																																			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+																																			A3(
+																																				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+																																				'id',
+																																				_elm_lang$core$Json_Decode$string,
+																																				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Common_Customer_Types$Customer)))))))))))))))))))))))))))))))))))));
 var _user$project$Common_Customer_Decoder$customersDecoder = A2(
 	_elm_lang$core$Json_Decode$field,
 	'customers',
@@ -28508,7 +28520,9 @@ var _user$project$Common_TransactionTypes$CashOutTxRec = function (a) {
 												return function (m) {
 													return function (n) {
 														return function (o) {
-															return {id: a, machineName: b, toAddress: c, cryptoAtoms: d, cryptoCode: e, fiat: f, fiatCode: g, status: h, dispense: i, notified: j, redeemed: k, phone: l, error: m, created: n, confirmed: o};
+															return function (p) {
+																return {id: a, machineName: b, toAddress: c, cryptoAtoms: d, cryptoCode: e, fiat: f, fiatCode: g, status: h, dispense: i, notified: j, redeemed: k, phone: l, email: m, error: n, created: o, confirmed: p};
+															};
 														};
 													};
 												};
@@ -34023,53 +34037,57 @@ var _user$project$Transaction_Decoder$cashOutTxDecoder = A3(
 			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 			A3(
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-				'phone',
+				'email',
 				_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 				A3(
 					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-					'redeem',
-					_elm_lang$core$Json_Decode$bool,
+					'phone',
+					_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 					A3(
 						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'notified',
+						'redeem',
 						_elm_lang$core$Json_Decode$bool,
 						A3(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-							'dispense',
+							'notified',
 							_elm_lang$core$Json_Decode$bool,
 							A3(
 								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-								'status',
-								_elm_lang$core$Json_Decode$string,
+								'dispense',
+								_elm_lang$core$Json_Decode$bool,
 								A3(
 									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-									'fiatCode',
+									'status',
 									_elm_lang$core$Json_Decode$string,
 									A3(
 										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-										'fiat',
-										_user$project$Transaction_Decoder$floatString,
+										'fiatCode',
+										_elm_lang$core$Json_Decode$string,
 										A3(
 											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-											'cryptoCode',
-											_user$project$Transaction_Decoder$cryptoCodeDecoder,
+											'fiat',
+											_user$project$Transaction_Decoder$floatString,
 											A3(
 												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-												'cryptoAtoms',
-												_user$project$Transaction_Decoder$intString,
+												'cryptoCode',
+												_user$project$Transaction_Decoder$cryptoCodeDecoder,
 												A3(
 													_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-													'toAddress',
-													_elm_lang$core$Json_Decode$string,
+													'cryptoAtoms',
+													_user$project$Transaction_Decoder$intString,
 													A3(
 														_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-														'machineName',
+														'toAddress',
 														_elm_lang$core$Json_Decode$string,
 														A3(
 															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-															'id',
+															'machineName',
 															_elm_lang$core$Json_Decode$string,
-															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Common_TransactionTypes$CashOutTxRec))))))))))))))));
+															A3(
+																_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+																'id',
+																_elm_lang$core$Json_Decode$string,
+																_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Common_TransactionTypes$CashOutTxRec)))))))))))))))));
 var _user$project$Transaction_Decoder$txDecode = function (txClass) {
 	var _p4 = txClass;
 	switch (_p4) {
@@ -34472,17 +34490,38 @@ var _user$project$Transactions$rowView = function (tx) {
 														_0: _user$project$Css_Admin$class(
 															{
 																ctor: '::',
-																_0: _user$project$Css_Classes$TxAddress,
+																_0: _user$project$Css_Classes$NumberColumn,
 																_1: {ctor: '[]'}
 															}),
 														_1: {ctor: '[]'}
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text(_p4.toAddress),
+														_0: _elm_lang$html$Html$text(
+															A2(_elm_lang$core$Maybe$withDefault, '', _p4.email)),
 														_1: {ctor: '[]'}
 													}),
-												_1: {ctor: '[]'}
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$td,
+														{
+															ctor: '::',
+															_0: _user$project$Css_Admin$class(
+																{
+																	ctor: '::',
+																	_0: _user$project$Css_Classes$TxAddress,
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														},
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html$text(_p4.toAddress),
+															_1: {ctor: '[]'}
+														}),
+													_1: {ctor: '[]'}
+												}
 											}
 										}
 									}
@@ -34652,17 +34691,37 @@ var _user$project$Transactions$tableView = function (txs) {
 																_0: _user$project$Css_Admin$class(
 																	{
 																		ctor: '::',
-																		_0: _user$project$Css_Classes$TxAddress,
+																		_0: _user$project$Css_Classes$TxPhone,
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
 															},
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html$text('To address'),
+																_0: _elm_lang$html$Html$text('Email'),
 																_1: {ctor: '[]'}
 															}),
-														_1: {ctor: '[]'}
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$td,
+																{
+																	ctor: '::',
+																	_0: _user$project$Css_Admin$class(
+																		{
+																			ctor: '::',
+																			_0: _user$project$Css_Classes$TxAddress,
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html$text('To address'),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
 													}
 												}
 											}
@@ -35246,7 +35305,7 @@ var _user$project$Customer_View$customerView = function (customer) {
 															{ctor: '[]'},
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html$text('Created'),
+																_0: _elm_lang$html$Html$text('Email'),
 																_1: {ctor: '[]'}
 															}),
 														_1: {
@@ -35256,8 +35315,7 @@ var _user$project$Customer_View$customerView = function (customer) {
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html$text(
-																		A2(_justinmimbs$elm_date_extra$Date_Extra$toFormattedString, 'yyyy-MM-dd HH:mm', customer.created)),
+																	_0: _user$project$Customer_View$maybeText(customer.email),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {ctor: '[]'}
@@ -35275,7 +35333,7 @@ var _user$project$Customer_View$customerView = function (customer) {
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Block Customer'),
+																	_0: _elm_lang$html$Html$text('Completed email at'),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {
@@ -35285,7 +35343,8 @@ var _user$project$Customer_View$customerView = function (customer) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: A2(_user$project$Customer_View$customerActions, customer.id, customer.authorizedOverride),
+																		_0: _elm_lang$html$Html$text(
+																			_user$project$Customer_View$formatDate(customer.emailAt)),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -35303,7 +35362,7 @@ var _user$project$Customer_View$customerView = function (customer) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Authorized at '),
+																		_0: _elm_lang$html$Html$text('Created'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {
@@ -35314,7 +35373,7 @@ var _user$project$Customer_View$customerView = function (customer) {
 																		{
 																			ctor: '::',
 																			_0: _elm_lang$html$Html$text(
-																				_user$project$Customer_View$formatDate(customer.authorizedAt)),
+																				A2(_justinmimbs$elm_date_extra$Date_Extra$toFormattedString, 'yyyy-MM-dd HH:mm', customer.created)),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {ctor: '[]'}
@@ -35332,7 +35391,7 @@ var _user$project$Customer_View$customerView = function (customer) {
 																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Daily Volume '),
+																			_0: _elm_lang$html$Html$text('Block Customer'),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {
@@ -35342,13 +35401,72 @@ var _user$project$Customer_View$customerView = function (customer) {
 																			{ctor: '[]'},
 																			{
 																				ctor: '::',
-																				_0: _user$project$Customer_View$maybeText(customer.dailyVolume),
+																				_0: A2(_user$project$Customer_View$customerActions, customer.id, customer.authorizedOverride),
 																				_1: {ctor: '[]'}
 																			}),
 																		_1: {ctor: '[]'}
 																	}
 																}),
-															_1: {ctor: '[]'}
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$tr,
+																	{ctor: '[]'},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$td,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('Authorized at '),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$td,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text(
+																						_user$project$Customer_View$formatDate(customer.authorizedAt)),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$tr,
+																		{ctor: '[]'},
+																		{
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$td,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('Daily Volume '),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$td,
+																					{ctor: '[]'},
+																					{
+																						ctor: '::',
+																						_0: _user$project$Customer_View$maybeText(customer.dailyVolume),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {ctor: '[]'}
+																			}
+																		}),
+																	_1: {ctor: '[]'}
+																}
+															}
 														}
 													}
 												}
@@ -36026,7 +36144,7 @@ var _user$project$Customers_View$rowView = function (customer) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: _user$project$Customers_View$maybeText(customer.name),
+								_0: _user$project$Customers_View$maybeText(customer.email),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -36036,10 +36154,21 @@ var _user$project$Customers_View$rowView = function (customer) {
 								{ctor: '[]'},
 								{
 									ctor: '::',
-									_0: _user$project$Customers_View$maybeText(customer.status),
+									_0: _user$project$Customers_View$maybeText(customer.name),
 									_1: {ctor: '[]'}
 								}),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$td,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _user$project$Customers_View$maybeText(customer.status),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
 						}
 					}
 				}
@@ -36128,7 +36257,7 @@ var _user$project$Customers_View$tableView = function (customers) {
 														{ctor: '[]'},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text('Name'),
+															_0: _elm_lang$html$Html$text('Email'),
 															_1: {ctor: '[]'}
 														}),
 													_1: {
@@ -36138,10 +36267,21 @@ var _user$project$Customers_View$tableView = function (customers) {
 															{ctor: '[]'},
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html$text('Status'),
+																_0: _elm_lang$html$Html$text('Name'),
 																_1: {ctor: '[]'}
 															}),
-														_1: {ctor: '[]'}
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$td,
+																{ctor: '[]'},
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html$text('Status'),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
 													}
 												}
 											}

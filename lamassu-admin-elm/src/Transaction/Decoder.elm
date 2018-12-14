@@ -97,6 +97,7 @@ cashOutTxDecoder =
         |> required "notified" bool
         |> required "redeem" bool
         |> required "phone" (nullable string)
+        |> required "email" (nullable string)
         |> required "error" (nullable string)
         |> required "created" date
         |> required "confirmedAt" confirmedDecoder

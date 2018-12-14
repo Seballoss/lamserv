@@ -159,6 +159,7 @@ rowView tx =
                     , td [] [ cryptoCodeDisplay cashOut.cryptoCode ]
                     , td [ class [ C.NumberColumn ] ] [ text (format "0,0.00" cashOut.fiat) ]
                     , td [ class [ C.NumberColumn ] ] [ text (Maybe.withDefault "" cashOut.phone) ]
+                    , td [ class [ C.NumberColumn ] ] [ text (Maybe.withDefault "" cashOut.email) ]
                     , td [ class [ C.TxAddress ] ] [ text cashOut.toAddress ]
                     ]
 
@@ -178,6 +179,7 @@ tableView txs =
                     , td [ colspan 2 ] [ text "Crypto" ]
                     , td [ class [ C.TxAmount ] ] [ text "Fiat" ]
                     , td [ class [ C.TxPhone ] ] [ text "Phone" ]
+                    , td [ class [ C.TxPhone ] ] [ text "Email" ]
                     , td [ class [ C.TxAddress ] ] [ text "To address" ]
                     ]
                 ]

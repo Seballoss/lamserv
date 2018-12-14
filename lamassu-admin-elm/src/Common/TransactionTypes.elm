@@ -43,6 +43,7 @@ type alias CashOutTxRec =
     , notified : Bool
     , redeemed : Bool
     , phone : Maybe String
+    , email : Maybe String
     , error : Maybe String
     , created : Date
     , confirmed : Bool

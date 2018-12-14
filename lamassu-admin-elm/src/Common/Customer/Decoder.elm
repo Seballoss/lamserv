@@ -45,6 +45,8 @@ customerDecoder =
         |> required "name" (nullable string)
         |> required "phone" (nullable string)
         |> required "phoneAt" (nullable date)
+        |> required "email" (nullable string)
+        |> required "emailAt" (nullable date)
         |> required "smsOverride" authorizedDecoder
         |> required "smsOverrideByName" (nullable string)
         |> required "smsOverrideAt" (nullable date)
